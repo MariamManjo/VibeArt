@@ -56,12 +56,6 @@ const formatted = computed(() =>
         </div>
       </div>
 
-      <div class="dock">
-        <div class="pill"><logos:vue /> Vue</div>
-        <div class="pill"><logos:vitejs /> Vite</div>
-        <div class="pill"><carbon:presentation-file /> Slidev</div>
-        <div class="pill"><logos:unocss /> UnoCSS</div>
-      </div>
     </div>
   </div>
 </template>
@@ -188,26 +182,6 @@ const formatted = computed(() =>
   color: #a8c5b5;
   margin-right: 0.3rem;
   font-weight: 600;
-}
-
-.dock {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  padding: 0.5rem 0.7rem 0.6rem;
-}
-
-.pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.22rem 0.45rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(232, 238, 233, 0.78);
-  font-size: 0.62rem;
-  letter-spacing: 0.04em;
 }
 
 @keyframes ken {

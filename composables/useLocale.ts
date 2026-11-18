@@ -40,7 +40,6 @@ export const copy = {
     errTerms: 'დაეთანხმე პირობებს',
     errDup: 'უკვე რეგისტრირებულია',
     errGeneric: 'სცადე თავიდან',
-    stack: 'Vue · Slidev · Vite',
   },
   en: {
     brand: 'VIBEART',
@@ -64,7 +63,6 @@ export const copy = {
     errTerms: 'Accept terms',
     errDup: 'Already registered',
     errGeneric: 'Try again',
-    stack: 'Vue · Slidev · Vite',
   },
 } as const
 
