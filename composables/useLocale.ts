@@ -44,7 +44,7 @@ export const copy = {
   en: {
     brand: 'VIBEART',
     brandSub: 'for artists',
-    title: 'Take a front-row seat',
+    title: 'Take a front row seat',
     tagline: 'Keep creating. Let the world discover you.',
     live: 'LIVE',
     viewers: 'watching',

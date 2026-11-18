@@ -25,7 +25,6 @@ favicon: /images/stage.jpg
     <img src="/images/stage.jpg" alt="" class="bg" />
     <div class="veil" />
     <div class="cover-copy">
-      <SeatRows />
       <HeroCopy />
     </div>
   </div>
