@@ -41,9 +41,9 @@
 
 | Screen | Feeling |
 | --- | --- |
-| **1 · Cover** | Stage light + title + tagline |
-| **2 · Live** | Artist stream mock |
-| **3 · Subscribe** | Email + Artist / Art lover |
+| **1 · Subscribe** | Email + Artist / Art lover |
+| **2 · Cover** | Stage light + title + tagline |
+| **3 · Live** | Artist stream mock |
 | **4 · Terms** | Short KA / EN copy |
 
 Side arrows + bottom dots on every page. Language toggle stays top-right.

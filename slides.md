@@ -20,6 +20,28 @@ canvasWidth: 1100
 favicon: /images/stage.jpg
 ---
 
+<div class="join-slide">
+  <SubscribeForm />
+</div>
+
+<style>
+.join-slide {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+}
+</style>
+
+<!--
+Subscribe — email + role
+-->
+
+---
+layout: immersive
+---
+
 <div class="cover">
   <div class="cover-visual">
     <img src="/images/stage.jpg" alt="" class="bg" />
@@ -98,28 +120,6 @@ layout: immersive
 
 <!--
 Product screen — Twitch-like for artists
--->
-
----
-layout: immersive
----
-
-<div class="join-slide">
-  <SubscribeForm />
-</div>
-
-<style>
-.join-slide {
-  flex: 1;
-  min-height: 0;
-  display: grid;
-  place-items: center;
-  overflow: auto;
-}
-</style>
-
-<!--
-Subscribe — email + role
 -->
 
 ---
