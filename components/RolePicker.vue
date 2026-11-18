@@ -128,9 +128,17 @@ const roles = [
   filter: saturate(1) brightness(0.95);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
+  .grid {
+    gap: 0.75rem;
+  }
+
   .role {
-    height: 6.4rem;
+    height: 7.5rem;
+  }
+
+  .title {
+    font-size: 1rem;
   }
 }
 </style>

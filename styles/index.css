@@ -30,3 +30,56 @@ body,
 #slide-controller:hover {
   opacity: 0.85;
 }
+
+/*
+  Mobile / tablet: drop presentation scaling.
+  Fill the real viewport like a normal website.
+*/
+@media (max-width: 900px) {
+  html,
+  body,
+  #app {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .slidev-slide-container,
+  .slidev-slide-container > * {
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-width: none !important;
+    max-height: none !important;
+  }
+
+  #slide-content,
+  #slideshow,
+  .slidev-page {
+    position: fixed !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: 0 !important;
+    transform: none !important;
+    transform-origin: center center !important;
+  }
+
+  .slidev-layout,
+  .slidev-layout > * {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Hide built-in Slidev presenter chrome on phones */
+  .slidev-controls,
+  #slide-controller,
+  .slidev-icon-btn {
+    display: none !important;
+  }
+}

@@ -46,16 +46,15 @@ const formatted = computed(() =>
       <div class="stage">
         <img src="/images/artist.jpg" alt="" class="hero" />
         <div class="overlay" />
-        <div class="canvas-float">
+        <div class="canvas-float desktop-only">
           <img src="/images/canvas.jpg" alt="" />
         </div>
-        <div class="chat">
+        <div class="chat desktop-only">
           <div class="line"><span>nino</span> 🔥</div>
           <div class="line"><span>luka</span> brush stroke?</div>
           <div class="line"><span>ana</span> front row ✨</div>
         </div>
       </div>
-
     </div>
   </div>
 </template>
@@ -200,6 +199,34 @@ const formatted = computed(() =>
   }
   50% {
     transform: translateY(-5px);
+  }
+}
+
+@media (max-width: 900px) {
+  .screen {
+    max-width: none;
+  }
+
+  .bezel {
+    border-radius: 0.85rem;
+    box-shadow: none;
+  }
+
+  .chrome {
+    padding: 0.7rem 0.85rem;
+    font-size: 0.78rem;
+  }
+
+  .stage {
+    aspect-ratio: 4 / 5;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .overlay {
+    background: linear-gradient(0deg, rgba(8, 10, 9, 0.35), transparent 45%);
   }
 }
 </style>

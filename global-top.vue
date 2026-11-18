@@ -28,11 +28,11 @@ import LangToggle from './components/LangToggle.vue'
   pointer-events: auto;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   .topbar {
-    top: 0.65rem;
-    left: 0.7rem;
-    right: 0.7rem;
+    top: max(0.65rem, env(safe-area-inset-top));
+    left: 0.85rem;
+    right: 0.85rem;
   }
 }
 </style>

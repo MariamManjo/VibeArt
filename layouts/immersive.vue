@@ -31,4 +31,19 @@ import StageGlow from '../components/StageGlow.vue'
   flex-direction: column;
   box-sizing: border-box;
 }
+
+@media (max-width: 900px) {
+  .immersive {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .content {
+    padding:
+      max(4.5rem, calc(env(safe-area-inset-top) + 3.6rem))
+      1rem
+      max(5.5rem, calc(env(safe-area-inset-bottom) + 4.5rem));
+    min-height: 100%;
+  }
+}
 </style>

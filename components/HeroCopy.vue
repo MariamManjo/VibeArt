@@ -42,4 +42,18 @@ p {
   font-style: italic;
   text-wrap: balance;
 }
+
+@media (max-width: 900px) {
+  .hero {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
 </style>

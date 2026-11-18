@@ -95,6 +95,15 @@ layout: immersive
   gap: 0.75rem;
   justify-items: center;
 }
+@media (max-width: 900px) {
+  .cover-visual {
+    border-radius: 0.85rem;
+    min-height: 58dvh;
+  }
+  .cover-copy {
+    padding: 1.25rem 1rem 1.5rem;
+  }
+}
 </style>
 
 <!--

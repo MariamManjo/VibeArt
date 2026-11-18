@@ -250,4 +250,24 @@ async function submit() {
   opacity: 0;
   transform: translateY(8px);
 }
+
+@media (max-width: 900px) {
+  .panel {
+    width: 100%;
+  }
+
+  .field input,
+  .cta {
+    height: 3rem;
+    font-size: 1rem;
+  }
+
+  .cta {
+    letter-spacing: 0.1em;
+  }
+
+  .terms {
+    font-size: 0.92rem;
+  }
+}
 </style>

@@ -178,4 +178,23 @@ const atEnd = computed(() => currentPage.value >= total.value)
   width: 1.05rem;
   background: #a8c5b5;
 }
+
+@media (max-width: 900px) {
+  .side {
+    display: none;
+  }
+
+  .nav {
+    bottom: max(0.85rem, env(safe-area-inset-bottom));
+    gap: 0.7rem;
+    padding: 0.4rem 0.55rem;
+    width: min(calc(100vw - 1.5rem), 22rem);
+    justify-content: space-between;
+  }
+
+  .arrow {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}
 </style>
