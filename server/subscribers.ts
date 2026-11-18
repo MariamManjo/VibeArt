@@ -52,5 +52,27 @@ export async function addSubscriber(input: {
   }
   subscribers.push(subscriber)
   await fs.writeFile(DATA_FILE, `${JSON.stringify(subscribers, null, 2)}\n`, 'utf8')
+
+  const webhook = process.env.SUBSCRIBE_WEBHOOK_URL
+  if (webhook) {
+    try {
+      await fetch(webhook, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: subscriber.email,
+          category: subscriber.category,
+          locale: subscriber.locale,
+          createdAt: subscriber.createdAt,
+          source: 'vibeart-local',
+        }),
+        redirect: 'follow',
+      })
+    }
+    catch {
+      // Local file is source of truth in dev; webhook is best-effort.
+    }
+  }
+
   return { subscriber, created: true }
 }

@@ -63,7 +63,9 @@ Open **http://127.0.0.1:43123**
 
 ## See who subscribed
 
-Emails are stored in `data/subscribers.json`.
+### Local
+
+Emails go to `data/subscribers.json`.
 
 ```bash
 ADMIN_SECRET=change-me \
@@ -71,8 +73,22 @@ curl -H "x-admin-secret: change-me" \
   http://127.0.0.1:43123/api/subscribers
 ```
 
-For a public site, connect a Google Sheet / Airtable / database next —  
-local files do not persist on Vercel.
+### Vercel (required for production)
+
+Local files do **not** persist on Vercel. Save emails to a **Google Sheet**:
+
+1. Create a Google Sheet  
+2. **Extensions → Apps Script** → paste `docs/google-sheet-apps-script.gs`  
+3. Run `setupSheet()` once  
+4. **Deploy → New deployment → Web app**  
+   - Execute as: **Me**  
+   - Who has access: **Anyone**  
+5. Copy the Web App URL  
+6. Vercel → Project → **Settings → Environment Variables**  
+   - `SUBSCRIBE_WEBHOOK_URL` = that URL  
+7. **Redeploy**
+
+Every subscribe on [vibeart-tau.vercel.app](https://vibeart-tau.vercel.app/) will appear as a new row in your Sheet.
 
 ---
 
