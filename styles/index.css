@@ -68,6 +68,8 @@ body,
     margin: 0 !important;
     transform: none !important;
     transform-origin: center center !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
   }
 
   .slidev-layout,

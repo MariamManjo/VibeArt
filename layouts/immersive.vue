@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import StageGlow from '../components/StageGlow.vue'
+import NavArrows from '../components/NavArrows.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@ import StageGlow from '../components/StageGlow.vue'
     <div class="content">
       <slot />
     </div>
+    <NavArrows />
   </div>
 </template>
 

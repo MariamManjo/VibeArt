@@ -164,10 +164,24 @@ async function submit() {
 
 .terms {
   display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
+  align-items: center;
+  gap: 0.65rem;
   color: #a0ada7;
   font-size: 0.85rem;
+  line-height: 1.35;
+}
+
+.terms input[type='checkbox'] {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin: 0;
+  flex-shrink: 0;
+  accent-color: #a8c5b5;
+  cursor: pointer;
+}
+
+.terms > span {
+  display: inline;
 }
 
 .terms .link {

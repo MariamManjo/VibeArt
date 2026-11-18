@@ -1,21 +1,36 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useNav } from '@slidev/client'
+import { useNav, useSlideContext } from '@slidev/client'
 
 const { currentPage, total, prev, next } = useNav()
+const { $page } = useSlideContext()
 
+const active = computed(() => currentPage.value === $page.value)
 const atStart = computed(() => currentPage.value <= 1)
 const atEnd = computed(() => currentPage.value >= total.value)
+
+function goPrev(event: Event) {
+  event.preventDefault()
+  event.stopPropagation()
+  if (!atStart.value) prev()
+}
+
+function goNext(event: Event) {
+  event.preventDefault()
+  event.stopPropagation()
+  if (!atEnd.value) next()
+}
 </script>
 
 <template>
-  <div class="nav-root">
+  <div v-if="active" class="nav-root">
     <button
       type="button"
       class="side left"
       :disabled="atStart"
       aria-label="Previous"
-      @click="prev()"
+      @click="goPrev"
+      @touchend.prevent="goPrev"
     >
       <carbon:chevron-left />
     </button>
@@ -25,7 +40,8 @@ const atEnd = computed(() => currentPage.value >= total.value)
       class="side right"
       :disabled="atEnd"
       aria-label="Next"
-      @click="next()"
+      @click="goNext"
+      @touchend.prevent="goNext"
     >
       <carbon:chevron-right />
     </button>
@@ -36,7 +52,8 @@ const atEnd = computed(() => currentPage.value >= total.value)
         class="arrow"
         :disabled="atStart"
         aria-label="Previous"
-        @click="prev()"
+        @click="goPrev"
+        @touchend.prevent="goPrev"
       >
         <carbon:arrow-left />
       </button>
@@ -55,7 +72,8 @@ const atEnd = computed(() => currentPage.value >= total.value)
         class="arrow"
         :disabled="atEnd"
         aria-label="Next"
-        @click="next()"
+        @click="goNext"
+        @touchend.prevent="goNext"
       >
         <carbon:arrow-right />
       </button>
@@ -70,10 +88,10 @@ const atEnd = computed(() => currentPage.value >= total.value)
 
 .side {
   pointer-events: auto;
-  position: fixed;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 50;
+  z-index: 60;
   width: 2.6rem;
   height: 2.6rem;
   border-radius: 999px;
@@ -84,6 +102,7 @@ const atEnd = computed(() => currentPage.value >= total.value)
   place-items: center;
   cursor: pointer;
   backdrop-filter: blur(10px);
+  touch-action: manipulation;
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -112,20 +131,21 @@ const atEnd = computed(() => currentPage.value >= total.value)
 
 .nav {
   pointer-events: auto;
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 0.85rem;
   transform: translateX(-50%);
-  z-index: 50;
+  z-index: 60;
   display: flex;
   align-items: center;
   gap: 0.85rem;
   padding: 0.35rem 0.45rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(8, 10, 9, 0.55);
+  background: rgba(8, 10, 9, 0.72);
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  touch-action: manipulation;
 }
 
 .arrow {
@@ -138,6 +158,8 @@ const atEnd = computed(() => currentPage.value >= total.value)
   display: grid;
   place-items: center;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background 0.2s ease,
     border-color 0.2s ease,
@@ -188,7 +210,7 @@ const atEnd = computed(() => currentPage.value >= total.value)
     bottom: max(0.85rem, env(safe-area-inset-bottom));
     gap: 0.7rem;
     padding: 0.4rem 0.55rem;
-    width: min(calc(100vw - 1.5rem), 22rem);
+    width: min(calc(100% - 1.5rem), 22rem);
     justify-content: space-between;
   }
 

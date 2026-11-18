@@ -16,7 +16,7 @@ import LangToggle from './components/LangToggle.vue'
   top: 0.85rem;
   left: 1rem;
   right: 1rem;
-  z-index: 40;
+  z-index: 80;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
