@@ -24,28 +24,6 @@ function goNext(event: Event) {
 
 <template>
   <div v-if="active" class="nav-root">
-    <button
-      type="button"
-      class="side left"
-      :disabled="atStart"
-      aria-label="Previous"
-      @click="goPrev"
-      @touchend.prevent="goPrev"
-    >
-      <carbon:chevron-left />
-    </button>
-
-    <button
-      type="button"
-      class="side right"
-      :disabled="atEnd"
-      aria-label="Next"
-      @click="goNext"
-      @touchend.prevent="goNext"
-    >
-      <carbon:chevron-right />
-    </button>
-
     <div class="nav" aria-label="Slide navigation">
       <button
         type="button"
@@ -84,49 +62,6 @@ function goNext(event: Event) {
 <style scoped>
 .nav-root {
   pointer-events: none;
-}
-
-.side {
-  pointer-events: auto;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 60;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(8, 10, 9, 0.55);
-  color: #e8eee9;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  touch-action: manipulation;
-  transition:
-    background 0.2s ease,
-    border-color 0.2s ease,
-    opacity 0.2s ease,
-    transform 0.2s ease;
-}
-
-.side.left {
-  left: 0.85rem;
-}
-
-.side.right {
-  right: 0.85rem;
-}
-
-.side:hover:not(:disabled) {
-  background: rgba(232, 238, 233, 0.92);
-  color: #121614;
-  border-color: transparent;
-}
-
-.side:disabled {
-  opacity: 0.22;
-  cursor: default;
 }
 
 .nav {
@@ -202,10 +137,6 @@ function goNext(event: Event) {
 }
 
 @media (max-width: 900px) {
-  .side {
-    display: none;
-  }
-
   .nav {
     bottom: max(0.85rem, env(safe-area-inset-bottom));
     gap: 0.7rem;
