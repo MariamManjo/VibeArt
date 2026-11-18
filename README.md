@@ -1,33 +1,34 @@
-# VIBEART — Front-row waitlist
+# VIBEART — Slidev waitlist
 
-Single-page bilingual (ქართული / English) subscribe landing for market research ahead of a live artist platform.
+Visual-first bilingual waitlist for a live artist platform. Built with [Slidev](https://sli.dev) + Vue components.
 
-## What it includes
+## Screens
 
-- Non-scrollable landing with email, category (Artist / Art lover), and Subscribe
-- KA / EN language toggle
-- Working subscribe API that stores emails in `data/subscribers.json`
-- Terms of Use page (placeholder copy until final legal text arrives)
+1. **Stage** — front-row seats over a live stage image  
+2. **Live product** — artist stream UI mock (Vue screen)  
+3. **Subscribe** — role picker + email capture  
+4. **Terms** — short KA/EN copy  
 
-## Run locally
+## Run
 
 ```bash
 npm install
-npm run dev -- -p 43123
+npm run dev
 ```
 
 Open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
-## Export subscribers
+## Stack
 
-Set an admin secret, then:
+- Slidev / Vite / Vue 3
+- `@vueuse/motion` for UI motion
+- UnoCSS + Iconify (via Slidev)
+- Local JSON subscribe API (`/api/subscribe`) in `vite.config.ts`
+
+## Export emails
 
 ```bash
-export ADMIN_SECRET=your-secret
-curl -H "x-admin-secret: $ADMIN_SECRET" http://127.0.0.1:43123/api/subscribers
+ADMIN_SECRET=your-secret curl -H "x-admin-secret: your-secret" http://127.0.0.1:43123/api/subscribers
 ```
 
-## Notes
-
-- Contact email and custom domain can be wired later (footer/terms already anticipate this).
-- File storage is fine for local research. For production hosting with durable storage, move `src/lib/subscribers.ts` to a database.
+Subscribers are stored in `data/subscribers.json`.

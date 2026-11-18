@@ -1,0 +1,30 @@
+:root {
+  --slidev-theme-primary: #a8c5b5;
+}
+
+html,
+body,
+#app {
+  background: #0c0f0e !important;
+}
+
+.slidev-layout {
+  background: transparent !important;
+  color: #e8eee9;
+}
+
+.slidev-page {
+  background: #0c0f0e;
+}
+
+/* Quieter chrome for a product landing feel */
+.slidev-controls,
+#slide-controller {
+  opacity: 0.35;
+  transition: opacity 0.25s ease;
+}
+
+.slidev-controls:hover,
+#slide-controller:hover {
+  opacity: 1;
+}
