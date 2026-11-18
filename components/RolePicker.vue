@@ -71,7 +71,7 @@ const roles = [
 
 .role {
   position: relative;
-  height: 7.5rem;
+  height: 5.8rem;
   border-radius: 0.95rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);

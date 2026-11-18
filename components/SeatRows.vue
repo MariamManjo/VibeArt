@@ -2,18 +2,11 @@
 const rows = [
   { id: 'a', seats: 7, glow: true },
   { id: 'b', seats: 9, glow: false },
-  { id: 'c', seats: 11, glow: false },
 ]
 </script>
 
 <template>
-  <div
-    v-motion
-    :initial="{ opacity: 0, y: 18 }"
-    :enter="{ opacity: 1, y: 0, transition: { duration: 650, delay: 120 } }"
-    class="seats"
-    aria-hidden="true"
-  >
+  <div class="seats" aria-hidden="true">
     <div class="stage-line" />
     <div v-for="row in rows" :key="row.id" class="row" :class="{ glow: row.glow }">
       <span
@@ -29,30 +22,30 @@ const rows = [
 <style scoped>
 .seats {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.35rem;
   justify-items: center;
-  width: min(100%, 22rem);
+  width: min(100%, 16rem);
   margin: 0 auto;
 }
 
 .stage-line {
-  width: 70%;
-  height: 0.35rem;
+  width: 65%;
+  height: 0.28rem;
   border-radius: 999px;
   background: linear-gradient(90deg, transparent, #a8c5b5, transparent);
-  margin-bottom: 0.4rem;
-  box-shadow: 0 0 24px rgba(168, 197, 181, 0.35);
+  margin-bottom: 0.25rem;
+  box-shadow: 0 0 18px rgba(168, 197, 181, 0.35);
 }
 
 .row {
   display: flex;
-  gap: 0.35rem;
+  gap: 0.28rem;
 }
 
 .seat {
-  width: 1.05rem;
-  height: 1.05rem;
-  border-radius: 0.28rem 0.28rem 0.4rem 0.4rem;
+  width: 0.82rem;
+  height: 0.82rem;
+  border-radius: 0.22rem 0.22rem 0.32rem 0.32rem;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -65,7 +58,7 @@ const rows = [
 .seat.front {
   background: #e8eee9;
   border-color: #e8eee9;
-  box-shadow: 0 0 18px rgba(232, 238, 233, 0.45);
-  transform: translateY(-2px);
+  box-shadow: 0 0 14px rgba(232, 238, 233, 0.45);
+  transform: translateY(-1px);
 }
 </style>

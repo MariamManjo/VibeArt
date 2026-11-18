@@ -15,8 +15,8 @@ fonts:
   sans: 'Noto Sans Georgian'
   serif: 'Noto Serif Georgian'
   weights: '400,500,600,700'
-aspectRatio: 16/9
-canvasWidth: 980
+aspectRatio: 16/10
+canvasWidth: 1100
 favicon: /images/stage.jpg
 ---
 
@@ -24,35 +24,32 @@ favicon: /images/stage.jpg
   <div class="cover-visual">
     <img src="/images/stage.jpg" alt="" class="bg" />
     <div class="veil" />
-    <SeatRows />
+    <div class="cover-copy">
+      <SeatRows />
+      <HeroCopy />
+    </div>
   </div>
-  <HeroCopy />
-  <button class="next" @click="$slidev.nav.next">
-    <carbon:arrow-down />
-  </button>
 </div>
 
 <style>
 .cover {
   flex: 1;
+  min-height: 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.4rem;
-  padding-top: 2.5rem;
 }
 .cover-visual {
   position: relative;
-  width: min(100%, 34rem);
-  aspect-ratio: 16 / 9;
-  border-radius: 1.1rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.05rem;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: 0 28px 70px rgba(0,0,0,0.4);
-  display: grid;
-  place-items: end center;
-  padding-bottom: 1.2rem;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 .cover-visual .bg {
   position: absolute;
@@ -60,33 +57,22 @@ favicon: /images/stage.jpg
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.55) saturate(0.9);
+  filter: brightness(0.5) saturate(0.9);
 }
 .cover-visual .veil {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8,10,9,0.15), rgba(8,10,9,0.72));
+  background:
+    linear-gradient(180deg, rgba(8,10,9,0.2) 0%, rgba(8,10,9,0.55) 45%, rgba(8,10,9,0.88) 100%);
 }
-.cover-visual :deep(.seats) {
+.cover-copy {
   position: relative;
   z-index: 1;
-}
-.next {
-  margin-top: 0.2rem;
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(255,255,255,0.04);
-  color: #d7e4dc;
+  width: 100%;
+  padding: 1.1rem 1.2rem 1.35rem;
   display: grid;
-  place-items: center;
-  cursor: pointer;
-  animation: bob 2.2s ease-in-out infinite;
-}
-@keyframes bob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
+  gap: 0.75rem;
+  justify-items: center;
 }
 </style>
 
@@ -105,9 +91,9 @@ layout: immersive
 <style>
 .live-slide {
   flex: 1;
+  min-height: 0;
   display: grid;
   place-items: center;
-  padding-top: 2.8rem;
 }
 </style>
 
@@ -126,9 +112,10 @@ layout: immersive
 <style>
 .join-slide {
   flex: 1;
+  min-height: 0;
   display: grid;
   place-items: center;
-  padding-top: 2.8rem;
+  overflow: auto;
 }
 </style>
 
@@ -147,9 +134,10 @@ layout: immersive
 <style>
 .terms-slide {
   flex: 1;
+  min-height: 0;
   display: grid;
   place-items: center;
-  padding-top: 2.8rem;
+  overflow: auto;
 }
 </style>
 

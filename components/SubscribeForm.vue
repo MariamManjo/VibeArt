@@ -126,7 +126,7 @@ async function submit() {
 
 .form {
   display: grid;
-  gap: 0.9rem;
+  gap: 0.7rem;
   text-align: left;
 }
 
@@ -143,7 +143,7 @@ async function submit() {
 }
 
 .field input {
-  height: 2.9rem;
+  height: 2.55rem;
   border-radius: 0.85rem;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(255, 255, 255, 0.04);
@@ -182,7 +182,7 @@ async function submit() {
 }
 
 .cta {
-  height: 2.95rem;
+  height: 2.55rem;
   border: 0;
   border-radius: 0.85rem;
   background: #e8eee9;
@@ -214,7 +214,7 @@ async function submit() {
 }
 
 .success {
-  min-height: 16rem;
+  min-height: 10rem;
   display: grid;
   place-content: center;
   gap: 0.7rem;

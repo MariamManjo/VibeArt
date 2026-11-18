@@ -26,8 +26,9 @@ import StageGlow from '../components/StageGlow.vue'
   z-index: 1;
   height: 100%;
   width: 100%;
-  padding: 1.25rem 1.35rem 1.1rem;
+  padding: 3.2rem 2.4rem 3.4rem;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 </style>

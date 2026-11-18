@@ -27,8 +27,8 @@ const formatted = computed(() =>
 <template>
   <div
     v-motion
-    :initial="{ opacity: 0, y: 24, scale: 0.98 }"
-    :enter="{ opacity: 1, y: 0, scale: 1, transition: { duration: 700 } }"
+    :initial="{ opacity: 0, y: 18, scale: 0.98 }"
+    :enter="{ opacity: 1, y: 0, scale: 1, transition: { duration: 650 } }"
     class="screen"
   >
     <div class="bezel">
@@ -68,16 +68,17 @@ const formatted = computed(() =>
 
 <style scoped>
 .screen {
-  width: min(100%, 46rem);
+  width: 100%;
+  max-width: 52rem;
   margin: 0 auto;
 }
 
 .bezel {
-  border-radius: 1.1rem;
+  border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.12);
   background: rgba(10, 12, 11, 0.72);
   box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.45),
+    0 22px 60px rgba(0, 0, 0, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
   overflow: hidden;
   backdrop-filter: blur(8px);
@@ -87,9 +88,9 @@ const formatted = computed(() =>
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.7rem 0.9rem;
+  padding: 0.55rem 0.75rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 0.72rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
 }
 
@@ -102,8 +103,8 @@ const formatted = computed(() =>
 }
 
 .dot {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 999px;
   background: #e8a090;
   opacity: 0.55;
@@ -124,7 +125,7 @@ const formatted = computed(() =>
 
 .stage {
   position: relative;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 8.2;
   overflow: hidden;
 }
 
@@ -141,19 +142,19 @@ const formatted = computed(() =>
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(8, 10, 9, 0.55), transparent 35%),
-    linear-gradient(0deg, rgba(8, 10, 9, 0.55), transparent 40%);
+    linear-gradient(90deg, rgba(8, 10, 9, 0.5), transparent 35%),
+    linear-gradient(0deg, rgba(8, 10, 9, 0.5), transparent 40%);
 }
 
 .canvas-float {
   position: absolute;
-  left: 4%;
-  bottom: 10%;
-  width: 28%;
-  border-radius: 0.7rem;
+  left: 3.5%;
+  bottom: 9%;
+  width: 22%;
+  border-radius: 0.55rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
   animation: floaty 5s ease-in-out infinite;
 }
 
@@ -166,46 +167,46 @@ const formatted = computed(() =>
 
 .chat {
   position: absolute;
-  right: 3%;
-  bottom: 10%;
-  width: min(42%, 12rem);
+  right: 2.5%;
+  bottom: 9%;
+  width: min(40%, 10.5rem);
   display: grid;
-  gap: 0.35rem;
+  gap: 0.28rem;
 }
 
 .line {
-  padding: 0.35rem 0.55rem;
-  border-radius: 0.55rem;
+  padding: 0.28rem 0.45rem;
+  border-radius: 0.45rem;
   background: rgba(0, 0, 0, 0.45);
   color: rgba(242, 245, 242, 0.88);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .line span {
   color: #a8c5b5;
-  margin-right: 0.35rem;
+  margin-right: 0.3rem;
   font-weight: 600;
 }
 
 .dock {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  padding: 0.7rem 0.85rem 0.85rem;
+  gap: 0.35rem;
+  padding: 0.5rem 0.7rem 0.6rem;
 }
 
 .pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.28rem 0.55rem;
+  gap: 0.3rem;
+  padding: 0.22rem 0.45rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   color: rgba(232, 238, 233, 0.78);
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   letter-spacing: 0.04em;
 }
 
@@ -214,7 +215,7 @@ const formatted = computed(() =>
     transform: scale(1.04) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+    transform: scale(1.08) translate3d(-1%, -0.8%, 0);
   }
 }
 
@@ -224,16 +225,7 @@ const formatted = computed(() =>
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
-  }
-}
-
-@media (max-width: 720px) {
-  .canvas-float {
-    width: 34%;
-  }
-  .chat {
-    display: none;
+    transform: translateY(-5px);
   }
 }
 </style>

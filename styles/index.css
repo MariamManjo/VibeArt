@@ -11,20 +11,22 @@ body,
 .slidev-layout {
   background: transparent !important;
   color: #e8eee9;
+  height: 100% !important;
+  padding: 0 !important;
 }
 
 .slidev-page {
   background: #0c0f0e;
 }
 
-/* Quieter chrome for a product landing feel */
+/* Keep default Slidev chrome subtle; custom NavArrows handle UX */
 .slidev-controls,
 #slide-controller {
-  opacity: 0.35;
+  opacity: 0.2;
   transition: opacity 0.25s ease;
 }
 
 .slidev-controls:hover,
 #slide-controller:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
